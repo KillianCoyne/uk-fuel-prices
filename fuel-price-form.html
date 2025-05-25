@@ -153,7 +153,7 @@
     
     <script>
         // Updated Google Script URL with better error handling
-        const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyhOqvYYN6vTqV8pp8kmbYZ8KhR0jt4GTxHrr1OoqPJ7Y-AHrKqSA5Eg3vDJ7mIIzU/exec';
+        const GOOGLE_SCRIPT_URL = 'https://docs.google.com/spreadsheets/d/1oqr3CbsFXTyWYb1M8UWbwi9TmbHBw9tYGWLVODWrbOM/edit?usp=sharing';
         
         document.getElementById('priceForm').addEventListener('submit', function(e) {
             e.preventDefault();
@@ -178,23 +178,17 @@
             document.getElementById('success').style.display = 'block';
             document.getElementById('error').style.display = 'none';
             
-            // Create URL with parameters (works better than POST with no-cors)
-            const params = new URLSearchParams({
-                postcode: data.postcode,
-                stationName: data.stationName,
-                brand: data.brand,
-                petrolPrice: data.petrolPrice || '',
-                dieselPrice: data.dieselPrice || '',
-                timestamp: data.timestamp
-            });
-            
-            // Send to Google Sheets
-            fetch(GOOGLE_SCRIPT_URL + '?' + params.toString(), {
-                method: 'GET',
-                mode: 'no-cors'
+            // Send to Google Sheets using POST
+            fetch(GOOGLE_SCRIPT_URL, {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data)
             })
             .then(() => {
-                // Show success
+                // Show success (with no-cors we can't read the response, so we assume success)
                 document.getElementById('success').textContent = 'Thank you! Prices submitted successfully.';
                 document.getElementById('priceForm').reset();
                 
