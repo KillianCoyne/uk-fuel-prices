@@ -1,208 +1,218 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<!DOCTYPE html>
 <html>
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2575.6">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; -webkit-text-stroke: #000000}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; -webkit-text-stroke: #000000; min-height: 14.0px}
-    span.s1 {font-kerning: none}
-  </style>
+    <title>UK Fuel Price Reporter</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        
+        .form-group {
+            margin-bottom: 15px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        
+        input, select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+        
+        button {
+            width: 100%;
+            padding: 15px;
+            background-color: #2196F3;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+        
+        button:hover {
+            background-color: #1976D2;
+        }
+        
+        .success {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 10px;
+            display: none;
+            text-align: center;
+        }
+        
+        .error {
+            background-color: #f44336;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 10px;
+            display: none;
+            text-align: center;
+        }
+        
+        .info-box {
+            background-color: #e3f2fd;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+    </style>
 </head>
 <body>
-<p class="p1"><span class="s1">&lt;!DOCTYPE html&gt;</span></p>
-<p class="p1"><span class="s1">&lt;html&gt;</span></p>
-<p class="p1"><span class="s1">&lt;head&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;title&gt;UK Fuel Price Reporter&lt;/title&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;style&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>body {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>font-family: Arial, sans-serif;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>max-width: 600px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>margin: 0 auto;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>padding: 20px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>background-color: #f5f5f5;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.container {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>background: white;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>padding: 20px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>border-radius: 10px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>box-shadow: 0 2px 10px rgba(0,0,0,0.1);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>h1 {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>color: #333;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>text-align: center;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.form-group {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>margin-bottom: 15px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>label {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>display: block;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>margin-bottom: 5px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>font-weight: bold;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>input, select {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>width: 100%;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>padding: 10px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>border: 1px solid #ddd;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>border-radius: 5px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>font-size: 16px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>button {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>width: 100%;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>padding: 15px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>background-color: #2196F3;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>color: white;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>border: none;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>border-radius: 5px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>font-size: 18px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>cursor: pointer;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>button:hover {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>background-color: #1976D2;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.success {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>background-color: #4CAF50;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>color: white;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>padding: 10px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>border-radius: 5px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>margin-top: 10px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>display: none;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.info-box {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>background-color: #e3f2fd;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>padding: 15px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>border-radius: 5px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>margin-bottom: 20px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</span></p>
-<p class="p1"><span class="s1">&lt;/head&gt;</span></p>
-<p class="p1"><span class="s1">&lt;body&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div class="container"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;h1&gt;Report Fuel Prices&lt;/h1&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="info-box"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;strong&gt;Help us track fuel prices!&lt;/strong&gt;&lt;br&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>Enter the prices you see at petrol stations.</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;form id="priceForm"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="form-group"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;label&gt;Postcode:&lt;/label&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;input type="text" id="postcode" required<span class="Apple-converted-space"> </span></span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                       </span>placeholder="e.g., SW1A 1AA"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="form-group"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;label&gt;Station Name:&lt;/label&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;input type="text" id="stationName" required<span class="Apple-converted-space"> </span></span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                       </span>placeholder="e.g., Shell High Street"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="form-group"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;label&gt;Brand:&lt;/label&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;select id="brand" required&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;option value=""&gt;Select brand...&lt;/option&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;option value="SHELL"&gt;Shell&lt;/option&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;option value="BP"&gt;BP&lt;/option&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;option value="ESSO"&gt;Esso&lt;/option&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;option value="TEXACO"&gt;Texaco&lt;/option&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;option value="TESCO"&gt;Tesco&lt;/option&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;option value="ASDA"&gt;Asda&lt;/option&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;option value="SAINSBURYS"&gt;Sainsbury's&lt;/option&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;option value="MORRISONS"&gt;Morrisons&lt;/option&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;option value="GULF"&gt;Gulf&lt;/option&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;option value="TOTAL"&gt;Total&lt;/option&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;option value="INDEPENDENT"&gt;Independent&lt;/option&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;option value="OTHER"&gt;Other&lt;/option&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/select&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="form-group"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;label&gt;Petrol Price (pence per litre):&lt;/label&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;input type="number" id="petrolPrice" step="0.1"<span class="Apple-converted-space"> </span></span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                       </span>placeholder="e.g., 145.9"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="form-group"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;label&gt;Diesel Price (pence per litre):&lt;/label&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;input type="number" id="dieselPrice" step="0.1"<span class="Apple-converted-space"> </span></span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                       </span>placeholder="e.g., 152.9"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;button type="submit"&gt;Submit Prices&lt;/button&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/form&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div id="success" class="success"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>Thank you! Prices submitted successfully.</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;script&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>// This is where the magic happens</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>document.getElementById('priceForm').addEventListener('submit', function(e) {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>e.preventDefault();</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>// Get the values from the form</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>const data = {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>postcode: document.getElementById('postcode').value,</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>stationName: document.getElementById('stationName').value,</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>brand: document.getElementById('brand').value,</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>petrolPrice: document.getElementById('petrolPrice').value,</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>dieselPrice: document.getElementById('dieselPrice').value,</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>timestamp: new Date().toISOString()</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>};</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>// Save to Google Sheets (we'll set this up next)</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>submitToGoogleSheets(data);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>});</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
-<p class="p1"><span class="s1">function submitToGoogleSheets(data) {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>// Replace this with your Google Apps Script URL</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>const GOOGLE_SCRIPT_URL = 'YOUR_GOOGLE_SCRIPT_URL_HERE';</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>// Show loading</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>document.getElementById('success').textContent = 'Submitting...';</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>document.getElementById('success').style.display = 'block';</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>// Send to Google Sheets</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>fetch(<a href="https://script.googleusercontent.com/macros/echo?user_content_key=AehSKLg4GriGv3BrAbt4d_7NsVQ751wlxPhJ79cuXM5QrZcB5QJ3qbkbcNveTXS3G23quSBvLLwjLzyFOyy8UdroDUBZLcFO70Rg9O8F8pdPCnyvQXXzsfgD0W3Dbo7Xl_41_FLqmjP5-6u7V44SOCZoVQMoycE3QEnzFc1NMGVtujzewmRNN4UGXDRGrVNXGcO0wK8mAIV4vWLvHYs-I2MHlzp1Hk0NKFyQa2KEkJen96CTbT4Xzx4yt-JmvR0qes01aKh8Jrz9Vb08N2InrcF8HsFjTgRFIiQmRIykGkIM&amp;lib=MXJGdQKYNh3Nrwk0LyWxLYM66LbPuHIvN">https://script.googleusercontent.com/macros/echo?user_content_key=AehSKLg4GriGv3BrAbt4d_7NsVQ751wlxPhJ79cuXM5QrZcB5QJ3qbkbcNveTXS3G23quSBvLLwjLzyFOyy8UdroDUBZLcFO70Rg9O8F8pdPCnyvQXXzsfgD0W3Dbo7Xl_41_FLqmjP5-6u7V44SOCZoVQMoycE3QEnzFc1NMGVtujzewmRNN4UGXDRGrVNXGcO0wK8mAIV4vWLvHYs-I2MHlzp1Hk0NKFyQa2KEkJen96CTbT4Xzx4yt-JmvR0qes01aKh8Jrz9Vb08N2InrcF8HsFjTgRFIiQmRIykGkIM&amp;lib=MXJGdQKYNh3Nrwk0LyWxLYM66LbPuHIvN</a>, {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>method: 'POST',</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>mode: 'no-cors',</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>headers: {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>'Content-Type': 'application/json',</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>},</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>body: JSON.stringify(data)</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>})</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.then(() =&gt; {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>// Show success</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>document.getElementById('success').textContent = 'Thank you! Prices submitted successfully.';</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>document.getElementById('priceForm').reset();</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>// Hide after 3 seconds</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>setTimeout(() =&gt; {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>document.getElementById('success').style.display = 'none';</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}, 3000);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>})</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.catch(error =&gt; {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>document.getElementById('success').textContent = 'Error submitting. Please try again.';</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>console.error('Error:', error);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>});</span></p>
-<p class="p1"><span class="s1">}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/script&gt;</span></p>
-<p class="p1"><span class="s1">&lt;/body&gt;</span></p>
-<p class="p1"><span class="s1">&lt;/html&gt;</span></p>
+    <div class="container">
+        <h1>Report Fuel Prices</h1>
+        
+        <div class="info-box">
+            <strong>Help us track fuel prices!</strong><br>
+            Enter the prices you see at petrol stations.
+        </div>
+        
+        <form id="priceForm">
+            <div class="form-group">
+                <label>Postcode:</label>
+                <input type="text" id="postcode" required 
+                       placeholder="e.g., SW1A 1AA">
+            </div>
+            
+            <div class="form-group">
+                <label>Station Name:</label>
+                <input type="text" id="stationName" required 
+                       placeholder="e.g., Shell High Street">
+            </div>
+            
+            <div class="form-group">
+                <label>Brand:</label>
+                <select id="brand" required>
+                    <option value="">Select brand...</option>
+                    <option value="SHELL">Shell</option>
+                    <option value="BP">BP</option>
+                    <option value="ESSO">Esso</option>
+                    <option value="TEXACO">Texaco</option>
+                    <option value="TESCO">Tesco</option>
+                    <option value="ASDA">Asda</option>
+                    <option value="SAINSBURYS">Sainsbury's</option>
+                    <option value="MORRISONS">Morrisons</option>
+                    <option value="GULF">Gulf</option>
+                    <option value="TOTAL">Total</option>
+                    <option value="INDEPENDENT">Independent</option>
+                    <option value="OTHER">Other</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label>Petrol Price (pence per litre):</label>
+                <input type="number" id="petrolPrice" step="0.1" 
+                       placeholder="e.g., 145.9">
+            </div>
+            
+            <div class="form-group">
+                <label>Diesel Price (pence per litre):</label>
+                <input type="number" id="dieselPrice" step="0.1" 
+                       placeholder="e.g., 152.9">
+            </div>
+            
+            <button type="submit">Submit Prices</button>
+        </form>
+        
+        <div id="success" class="success">
+            Thank you! Prices submitted successfully.
+        </div>
+        
+        <div id="error" class="error">
+            Error submitting. Please try again.
+        </div>
+    </div>
+    
+    <script>
+        // Updated Google Script URL with better error handling
+        const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyhOqvYYN6vTqV8pp8kmbYZ8KhR0jt4GTxHrr1OoqPJ7Y-AHrKqSA5Eg3vDJ7mIIzU/exec';
+        
+        document.getElementById('priceForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get the values from the form
+            const data = {
+                postcode: document.getElementById('postcode').value,
+                stationName: document.getElementById('stationName').value,
+                brand: document.getElementById('brand').value,
+                petrolPrice: document.getElementById('petrolPrice').value,
+                dieselPrice: document.getElementById('dieselPrice').value,
+                timestamp: new Date().toISOString()
+            };
+            
+            // Save to Google Sheets
+            submitToGoogleSheets(data);
+        });
+        
+        function submitToGoogleSheets(data) {
+            // Show loading
+            document.getElementById('success').textContent = 'Submitting...';
+            document.getElementById('success').style.display = 'block';
+            document.getElementById('error').style.display = 'none';
+            
+            // Create URL with parameters (works better than POST with no-cors)
+            const params = new URLSearchParams({
+                postcode: data.postcode,
+                stationName: data.stationName,
+                brand: data.brand,
+                petrolPrice: data.petrolPrice || '',
+                dieselPrice: data.dieselPrice || '',
+                timestamp: data.timestamp
+            });
+            
+            // Send to Google Sheets
+            fetch(GOOGLE_SCRIPT_URL + '?' + params.toString(), {
+                method: 'GET',
+                mode: 'no-cors'
+            })
+            .then(() => {
+                // Show success
+                document.getElementById('success').textContent = 'Thank you! Prices submitted successfully.';
+                document.getElementById('priceForm').reset();
+                
+                // Hide after 3 seconds
+                setTimeout(() => {
+                    document.getElementById('success').style.display = 'none';
+                }, 3000);
+            })
+            .catch(error => {
+                document.getElementById('success').style.display = 'none';
+                document.getElementById('error').style.display = 'block';
+                console.error('Error:', error);
+                
+                setTimeout(() => {
+                    document.getElementById('error').style.display = 'none';
+                }, 3000);
+            });
+        }
+    </script>
 </body>
 </html>
